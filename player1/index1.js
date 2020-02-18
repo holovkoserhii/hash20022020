@@ -1,7 +1,7 @@
 var fileName;
 
 function readFile() {
-  var file = document.getElementById("file").files[0];
+  const file = document.getElementById("file").files[0];
   fileName = file.name.slice(0, file.name.length - 3);
   const reader = new FileReader();
   reader.onload = function(event) {
