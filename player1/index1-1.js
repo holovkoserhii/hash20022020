@@ -19,7 +19,6 @@ var fileName;
 async function readFile() {
   const fileToProcess = file_a_url;
   const file = await axios.get(fileToProcess);
-  console.log(file);
   fileName = fileToProcess
     .split("/")
     [fileToProcess.split("/").length - 1].split(".")[0];
