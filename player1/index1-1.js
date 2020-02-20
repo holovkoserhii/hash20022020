@@ -61,6 +61,19 @@ const getData = contentArray => {
   return { libraries, daysToScan, books };
 };
 
+// const startAnalysis1 = ({ books, daysToScan, libraries }) => {
+//   let signUpContainer = 0;
+//   for (let library of libraries) {
+//     signUpContainer += library.signUpDays;
+//     if (daysToScan < signUpContainer) {
+//       break;
+//     }
+//     const timeLeft = daysToScan - signUpContainer;
+//     const booksAmount = timeLeft * library.shipBooksPerDay
+
+//   }
+// };
+
 async function readFile() {
   const fileToProcess = file_c_url;
   const file = await axios.get(fileToProcess);
@@ -70,18 +83,24 @@ async function readFile() {
 
   const content = file.data.split("\n");
   const dataRaw = getData(content);
-  // console.log(dataRaw);
-  startAnalysis(dataRaw);
+  const result = startAnalysis(dataRaw);
+  downloadCsv(result, fileName);
 }
 
-function downloadCsv(arr, name) {
+function downloadCsv(arr, fileName) {
   let newFileContent = `${arr.length}\n`;
-  newFileContent += arr.join(" ");
+  newFileContent = arr.reduce((accum, elem) => {
+    const firstLine = `${elem.libIdSelected} ${elem.bookIdsSelected.length}\n`;
+    const secondLine = `${elem.bookIdsSelected.join(" ")}\n`;
+    accum += firstLine;
+    accum += secondLine;
+    return accum;
+  }, newFileContent);
 
   let hiddenElement = document.createElement("a");
   hiddenElement.href = "data:text;charset=utf-8," + encodeURI(newFileContent);
   hiddenElement.target = "_blank";
-  hiddenElement.download = `${name}.txt`;
+  hiddenElement.download = `${fileName}.txt`;
   hiddenElement.click();
 }
 
