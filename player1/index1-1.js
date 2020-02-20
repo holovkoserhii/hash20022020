@@ -2,15 +2,17 @@
 // MAKE SURE TO UPLOAD INPUT FILES TO GITHUB FIRST
 
 const file_a_url =
-  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/a_example.in";
+  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/a_example.txt";
 const file_b_url =
-  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/b_small.in";
+  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/b_read_on.txt";
 const file_c_url =
-  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/c_medium.in";
+  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/c_incunabula.txt";
 const file_d_url =
-  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/d_quite_big.in";
+  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/d_tough_choices.txt";
 const file_e_url =
-  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/e_also_big.in";
+  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/e_so_many_books.txt";
+const file_f_url =
+  "https://raw.githubusercontent.com/holovkoserhii/hash20022020/master/inputs/f_libraries_of_the_world.txt";
 
 var fileName;
 
