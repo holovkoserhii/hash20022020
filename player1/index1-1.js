@@ -75,7 +75,7 @@ const getData = contentArray => {
 // };
 
 async function readFile() {
-  const fileToProcess = file_f_url;
+  const fileToProcess = file_c_url;
   const file = await axios.get(fileToProcess);
   fileName = fileToProcess
     .split("/")
