@@ -25,7 +25,6 @@ const startAnalysis = a => {
     }
 
   } );
-  console.log(totalScore)
   return output;
 };
 
